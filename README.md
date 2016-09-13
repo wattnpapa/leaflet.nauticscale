@@ -6,7 +6,6 @@ Extends the default leaflet scale control based on [jtreml/leaflet.customscale](
 
 ## Package Repos
 
-
 ### Bower
 ```
 bower install --save leaflet.nauticscale
@@ -15,4 +14,14 @@ bower install --save leaflet.nauticscale
 ### NPM
 ```
 npm install --save leaflet.nauticscale
+```
+
+## Usage
+
+```
+map.addControl(new L.Control.ScaleNautic({
+				metric: false,
+				imperial: false,
+				nautic: true
+			}));
 ```
