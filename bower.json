@@ -1,0 +1,21 @@
+{
+  "name": "leaflet.nauticscale",
+  "description": "Leaflet Nauticscale",
+  "main": "",
+  "authors": [
+    "Johannes Rudolph <johannes.rudolph@gmx.com>"
+  ],
+  "license": "BSD-2",
+  "homepage": "https://github.com/PowerPan/leaflet.nauticscale",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components/",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "leaflet": "^1.0.1"
+  }
+}
