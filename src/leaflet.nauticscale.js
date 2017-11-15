@@ -24,8 +24,8 @@ L.Control.ScaleNautic = L.Control.Scale.extend({
 
 		nauticalMiles = this._getRoundNum(maxNauticalMiles);
 
-		scale.style.width = Math.round(this.options.maxWidth * (nauticalMiles / maxNauticalMiles)) + 'px';
-		scale.innerHTML = nauticalMiles + ' nmi';
+		scale.style.width = Math.round(this.options.maxWidth * (nauticalMiles / maxNauticalMiles)) - 10 + 'px';
+		scale.innerHTML = nauticalMiles + ' nm';
 	},
 	
 	_getRoundNum: function (num) {
