@@ -22,14 +22,33 @@ L.Control.ScaleNautic = L.Control.Scale.extend({
 		var scale = this._nScale,
 			maxNauticalMiles = maxMeters / 1852, nauticalMiles;
 
-		if(maxMeters >= 1852) {
-			nauticalMiles = L.Control.Scale.prototype._getRoundNum.call(this, maxNauticalMiles);
-		} else {
-			nauticalMiles = maxNauticalMiles > 0.1 ? Math.round(maxNauticalMiles * 10) / 10 : Math.round(maxNauticalMiles * 100) / 100;
-		}
+		nauticalMiles = this._getRoundNum(maxNauticalMiles);
 
 		scale.style.width = Math.round(this.options.maxWidth * (nauticalMiles / maxNauticalMiles)) - 10 + 'px';
 		scale.innerHTML = nauticalMiles + ' nm';
+	},
+	
+	_getRoundNum: function (num) {
+        var pow10, d;
+		if (num >= 1) {
+			pow10 = Math.pow(10, (Math.floor(num) + '').length - 1);
+			d = num / pow10;
+		}
+		else {
+            pow10 = 1;
+            d = num;
+			while (d < 1) {
+				d *= 10;
+				pow10 *= 10;
+			}
+		} 
+		
+		d = d >= 10 ? 10 :
+		    d >= 5 ? 5 :
+		    d >= 3 ? 3 :
+			d >= 2 ? 2 : 1;
+		
+		return num >= 1 ? pow10 * d : d / pow10;
 	}
 });
 
