@@ -25,3 +25,8 @@ map.addControl(new L.Control.ScaleNautic({
 				nautic: true
 			}));
 ```
+
+## React-Leaflet
+
+Note: there is a React wrapper for this component in following repo, it is not maintained by the author of this repo: 
+https://github.com/LockBlock-dev/react-leaflet-nauticsale
